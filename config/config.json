@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "fusion_tech",
+    "password": null,
+    "database": "mydb",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "fusion_tech",
+    "password": null,
+    "database": "mydb",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "fusion_tech",
+    "password": null,
+    "database": "mydb",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
