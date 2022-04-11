@@ -9,11 +9,6 @@ const corsProps = {
   origin: 'http://localhost:3000',
   credentials: true,
 };
-const db = require('./models');
-
-// db.sequelize.sync().then(() => {
-//   console.log('Drop and Resync Db');
-// });
 
 app.use(cors(corsProps));
 app.use(bodyParser.json({limit: '50mb'}));
