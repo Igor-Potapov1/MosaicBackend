@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const cryptoJS = require('crypto-js');
 const config = require('../../config/auth.config');
 
-const checkIsAuth = async (req, res) => {
+const checkIsAuth = async (req, res, next) => {
   try {
     const {token} = req.cookies;
 
@@ -19,7 +19,7 @@ const checkIsAuth = async (req, res) => {
       }
     });
   } catch (error) {
-    res.json(error);
+    next(error);
   }
 };
 

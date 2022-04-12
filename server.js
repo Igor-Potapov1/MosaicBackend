@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 const PORT = 8080;
@@ -21,6 +22,8 @@ require('./routes/pages')(app);
 app.get('/', (req, res) => {
   res.json({message: 'Server is up'});
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server port is ${PORT}`);
