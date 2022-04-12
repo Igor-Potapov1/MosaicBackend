@@ -4,9 +4,10 @@ const jwt = require('jsonwebtoken');
 const cryptoJS = require('crypto-js');
 const config = require('../../config/auth.config');
 
-const signIn = async (req, res) => {
+const signIn = async (req, res, next) => {
   try {
     const {email, password} = req.body;
+    console.log(cryptoJS.AES.encrypt('demopassword', config.secret).toString());
 
     const targetUser = await User.findOne({
       where: {
@@ -33,11 +34,10 @@ const signIn = async (req, res) => {
     const token = jwt.sign({id: targetUser.id}, config.secret, {
       expiresIn: 86400,
     });
-
     res.cookie('token', token, {httpOnly: true});
     res.status(200).json(targetUser);
   } catch (error) {
-    res.json(error);
+    next(error);
   }
 };
 

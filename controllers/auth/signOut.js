@@ -1,10 +1,10 @@
-const signOut = async (req, res) => {
+const signOut = async (req, res, next) => {
   try {
     res.clearCookie('token');
 
     res.status(200).json('Ok');
   } catch (error) {
-    res.json(error);
+    next(error);
   }
 };
 

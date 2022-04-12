@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const cryptoJS = require('crypto-js');
 const config = require('../../config/auth.config');
 
-const signUp = async (req, res) => {
+const signUp = async (req, res, next) => {
   try {
     const {email, password} = req.body;
 
@@ -25,7 +25,7 @@ const signUp = async (req, res) => {
 
     res.json(newUser);
   } catch (error) {
-    res.json(error);
+    next(error);
   }
 };
 
