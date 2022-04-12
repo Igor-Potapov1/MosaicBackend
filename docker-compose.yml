@@ -8,14 +8,14 @@ services:
     container_name: mosaic_backend
     restart: always
     ports:
-      - 4026:8080
+      - 8080:8080
     command: bash -c /usr/src/app/start.sh
     env_file: .env
   mosaic_db:
     image: postgres
     container_name: mosaic_db
     ports:
-      - 5432:5432
+      - 5436:5432
     restart: always
     volumes:
       - ./dbs/postgres-data:/var/lib/postgresql
