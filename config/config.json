@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "fusion_tech",
-    "password": null,
+    "password": "12345",
     "database": "mydb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "fusion_tech",
-    "password": null,
+    "password": "12345",
     "database": "mydb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "fusion_tech",
-    "password": null,
+    "password": "12345",
     "database": "mydb",
-    "host": "127.0.0.1",
+    "host": "mosaic_db",
     "dialect": "postgres"
   }
 }
